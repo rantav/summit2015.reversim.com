@@ -1,0 +1,263 @@
+<!DOCTYPE html><html><head>
+  <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/76008af6130740d28115da831163bce65752cb2b.css?meteor_css_resource=true.html">
+
+
+
+
+  <style type="text/css"></style><title>Async workflows in Clojure | Reversim Summit 2015</title>
+
+
+
+
+<title>Reversim Summit 2015</title>
+
+
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet.html">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:900" rel="stylesheet" type="text/css">
+
+
+<meta property="twitter:title" content="Async workflows in Clojure | Reversim Summit 2015"><meta name="description" content="The talk will present the various options of achieving truly async inner-process communication within services.
+1. Intro to CSP and the Actor Model
+2. presenting various async workflow libs in Clojure:
+2.a. core.async
+2.b. pulsar and quasar
+2.c. manifold (deferred)
+3. Present common problems and use cases and their proposed solution and modelling while utilizing the ideas and libs presented in section 1 and 2."><meta property="twitter:description" content="The talk will present the various options of achieving truly async inner-process communication within services.
+1. Intro to CSP and the Actor Model
+2. presenting various async workflow libs in Clojure:
+2.a. core.async
+2.b. pulsar and quasar
+2.c. manifold (deferred)
+3. Present common problems and use cases and their proposed solution and modelling while utilizing the ideas and libs presented in section 1 and 2."><meta property="og:title" content="Async workflows in Clojure | Reversim Summit 2015"><meta property="og:description" content="The talk will present the various options of achieving truly async inner-process communication within services.
+1. Intro to CSP and the Actor Model
+2. presenting various async workflow libs in Clojure:
+2.a. core.async
+2.b. pulsar and quasar
+2.c. manifold (deferred)
+3. Present common problems and use cases and their proposed solution and modelling while utilizing the ideas and libs presented in section 1 and 2."><meta property="og:url" content="http://summit2015.reversim.com/proposal/B7z7mcdZvx2mMnxcY"><meta property="og:image" content="http://dpk7qq034rxx8.cloudfront.net/img/ogImage.jpg"><meta property="twitter:url" content="http://summit2015.reversim.com/proposal/B7z7mcdZvx2mMnxcY"></head>
+<body>
+
+
+
+
+
+
+
+
+	<!-- if we're not showing a dropdown, we need some other place to show messages -->
+	<div id="wrap">
+  <div id="main" class="container bg">
+      <div class="header">
+        <div class="row">
+          <div class="clearfix">
+            <a href="/" class="reversim-logo pull-left" title="Reversim Summit 2015.html"></a>
+            <h4 class="pull-left hidden-xs" style="margin: 1em">In collaboration with TCE</h4>
+            <a href="http://tce.technion.ac.il/" class="pull-left">
+              <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/tce-56.jpg" alt="TCE">
+            </a>
+          </div>
+          <div class="clearfix sponsors">
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Wix.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/wix-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Everything.me.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/everythingme-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="AOL.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/aol-56.jpg">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Como.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/como-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Klarna.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/klarna-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Outbrain.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/outbrain-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="MyHeritage.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/MH_logo_56px_hight.jpg">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Kenshoo.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/kenshoo-56.png">
+      </a>
+
+  </div>
+          <h3 class="text-muted no-underline"><a href="/">Reversim Summit 2015</a></h3>
+        </div>
+        <div class="row"><ul class="nav nav-tabs pull-left">
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/agenda.html">Agenda</a>
+  </li>
+
+    <li class="">
+      <a href="/register.html">Register</a>
+    </li>
+
+
+
+
+     <li class="">
+       <a href="/sessions.html">Sessions</a>
+     </li>
+
+  <li class="">
+    <a href="/speakers.html">Speakers</a>
+  </li>
+
+  <li class="">
+    <a href="/wishes.html">
+      Wish List
+
+    </a>
+  </li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      More <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li class=""><a href="/about.html">About</a></li>
+
+        <li class=""><a href="/info.html">Info</a></li>
+
+      <!--
+      <li class="{{activeClass 'community'}}"><a href="{{pathFor 'community'}}">Community</a></li>
+      -->
+      <li class=""><a href="/sponsors.html">Sponsors</a></li>
+      <li class=""><a href="/coc.html">Code of Conduct</a></li>
+      <li class=""><a href="/s2013.html">Summit 2013</a></li>
+      <li class=""><a href="/s2014.html">Summit 2014</a></li>
+    </ul>
+  </li>
+
+
+
+
+				<li id="login-dropdown-list" class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown">Sign in / up <b class="caret"></b></a>
+		<div class="dropdown-menu">
+
+
+
+
+
+
+			<div class="navbar-form">
+
+			<button class="login-button btn btn-block btn-Facebook">Sign in with Facebook</button>
+
+	</div>
+
+
+
+
+
+
+
+			<div class="navbar-form">
+
+			<button class="login-button btn btn-block btn-Google">Sign in with Google</button>
+
+	</div>
+
+
+		</div>
+	</li>
+
+
+
+
+
+</ul></div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12">
+
+  <a class="share-twitter no-underline pull-right share-large" href="https://twitter.com/share?url=http%3A%2F%2Fsummit2015.reversim.com%2Fproposal%2FB7z7mcdZvx2mMnxcY&amp;text=Vote%20for%3A%20%22Async%20workflows%20in%20Clojure%22&amp;via=reversim" target="_blank">
+    <i class="fa fa-twitter-square fa-2x"></i>
+  </a>
+  <a class="share-facebook no-underline pull-right share-large" href="https://www.facebook.com/dialog/share?app_id=163492177191737&amp;display=popup&amp;href=http%3A%2F%2Fsummit2015.reversim.com%2Fproposal%2FB7z7mcdZvx2mMnxcY&amp;redirect_uri=http%3A%2F%2Fsummit2015.reversim.com%2F" target="_blank">
+    <i class="fa fa-facebook-square fa-2x"></i>
+  </a>
+<h2>
+  <span class="pre-header">Title:</span>
+
+    Async workflows in Clojure
+
+</h2>
+
+
+  <h2><span class="pre-header">Type:</span> 40min talk</h2>
+
+<h2><span class="pre-header">Tags:</span>
+
+    <span class="label label-success label-tag">programming-methodology</span>
+
+    <span class="label label-success label-tag">programming-async</span>
+
+    <span class="label label-success label-tag">programming-framework</span>
+
+</h2>
+
+<h2><span class="pre-header">Abstract:</span></h2>
+
+  <div class="pull-right"><span class="label label-primary">Status: maybe next time</span></div>
+  <p class="lead"><p>The talk will present the various options of achieving truly async inner-process communication within services.</p>
+<ol>
+<li>Intro to CSP and the Actor Model</li>
+<li>presenting various async workflow libs in Clojure:<br>2.a. core.async<br>2.b. pulsar and quasar<br>2.c. manifold (deferred)</li>
+<li>Present common problems and use cases and their proposed solution and modelling while utilizing the ideas and libs presented in section 1 and 2.</li>
+</ol>
+</p>
+
+
+
+  <a href="/speaker/JhKXMcPTQfkPwHGfy/Nir%20Rubinstein.html">
+    <img src="https://lh5.googleusercontent.com/-B--rg_NaPPM/AAAAAAAAAAI/AAAAAAAAAB4/lV_Egg3tCMA/photo.jpg?sz=40" class="img-thumbnail img-thumbnail-40" data-toggle="tooltip" title="" data-original-title="Nir Rubinstein">
+  </a>
+
+
+<hr>
+<div class="actions-single">
+
+</div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="http://reversim.com">© reversim 2015</a>
+        <a class="no-underline" href="https://twitter.com/reversim">
+          <i class="fa fa-twitter fa-1x"></i>
+        </a>
+        <a class="no-underline" href="https://groups.google.com/forum/#!forum/reversim-summit">
+          <i class="fa fa-group fa-1x"></i>
+        </a>
+        <!--
+        <div class='pull-right built-with'>
+          <small>
+            Built with <a href='http://devdev.io/tool/JDYjKfzX2c4czMuRA/MeteorJS'>MeteorJS</a>, <a href='http://devdev.io/tool/LZvDtsq3bXySNWEuZ/TwitterBootstrap'>Bootstrap</a>, <a href='http://devdev.io/tool/LN4h97hJ8n6udBRq7/FontAwesome'>FontAwesome</a>, <a href='http://devdev.io/tool/kXx7bYJQaoXTDJ2T3/Alertify'>Alertify</a>, <a href='http://devdev.io/tool/cj5cRr5DcEBKmAMRC/CoffeeScript'>CoffeeScript</a>
+          </small>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

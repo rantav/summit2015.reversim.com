@@ -1,0 +1,279 @@
+<!DOCTYPE html><html><head>
+  <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/76008af6130740d28115da831163bce65752cb2b.css?meteor_css_resource=true.html">
+
+
+
+
+  <style type="text/css"></style><title>Building A kafka cluster in AWS that will survive AZ crash | Reversim Summit 2015</title>
+
+
+
+
+<title>Reversim Summit 2015</title>
+
+
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet.html">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:900" rel="stylesheet" type="text/css">
+
+
+<meta property="twitter:title" content="Building A kafka cluster in AWS that will survive AZ crash | Reversim Summit 2015"><meta name="description" content="Creating a Kafka cluster in AWS that withhold billions of messages per day and survive multi node / AZ crash
+
+- Selecting the right instance type
+- How Many brokers?
+- Setting the reasonable defaults
+- Deciding on replication factor, Number of partitions and retention for each topic
+- Configuring disks at 0.8.1
+- Automate brokers split-up between AZ for best fault tolerance
+- Reassign partitions on the fly and still keep fault tolerance
+- Adding metrics
+- Testing the cluster survivability"><meta property="twitter:description" content="Creating a Kafka cluster in AWS that withhold billions of messages per day and survive multi node / AZ crash
+
+- Selecting the right instance type
+- How Many brokers?
+- Setting the reasonable defaults
+- Deciding on replication factor, Number of partitions and retention for each topic
+- Configuring disks at 0.8.1
+- Automate brokers split-up between AZ for best fault tolerance
+- Reassign partitions on the fly and still keep fault tolerance
+- Adding metrics
+- Testing the cluster survivability"><meta property="og:title" content="Building A kafka cluster in AWS that will survive AZ crash | Reversim Summit 2015"><meta property="og:description" content="Creating a Kafka cluster in AWS that withhold billions of messages per day and survive multi node / AZ crash
+
+- Selecting the right instance type
+- How Many brokers?
+- Setting the reasonable defaults
+- Deciding on replication factor, Number of partitions and retention for each topic
+- Configuring disks at 0.8.1
+- Automate brokers split-up between AZ for best fault tolerance
+- Reassign partitions on the fly and still keep fault tolerance
+- Adding metrics
+- Testing the cluster survivability"><meta property="og:url" content="http://summit2015.reversim.com/proposal/GN2Sq8fPHKMDFZEkR"><meta property="og:image" content="http://dpk7qq034rxx8.cloudfront.net/img/ogImage.jpg"><meta property="twitter:url" content="http://summit2015.reversim.com/proposal/GN2Sq8fPHKMDFZEkR"></head>
+<body>
+
+
+
+
+
+
+
+
+	<!-- if we're not showing a dropdown, we need some other place to show messages -->
+	<div id="wrap">
+  <div id="main" class="container bg">
+      <div class="header">
+        <div class="row">
+          <div class="clearfix">
+            <a href="/" class="reversim-logo pull-left" title="Reversim Summit 2015.html"></a>
+            <h4 class="pull-left hidden-xs" style="margin: 1em">In collaboration with TCE</h4>
+            <a href="http://tce.technion.ac.il/" class="pull-left">
+              <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/tce-56.jpg" alt="TCE">
+            </a>
+          </div>
+          <div class="clearfix sponsors">
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Como.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/como-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Kenshoo.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/kenshoo-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Outbrain.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/outbrain-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="AOL.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/aol-56.jpg">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Wix.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/wix-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Everything.me.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/everythingme-56.png">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="MyHeritage.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/MH_logo_56px_hight.jpg">
+      </a>
+
+      <a href="/sponsors.html" class="sponsor-logo-title sponsors-float" title="Klarna.html">
+        <img class="img" src="http://dpk7qq034rxx8.cloudfront.net/img/klarna-56.png">
+      </a>
+
+  </div>
+          <h3 class="text-muted no-underline"><a href="/">Reversim Summit 2015</a></h3>
+        </div>
+        <div class="row"><ul class="nav nav-tabs pull-left">
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/agenda.html">Agenda</a>
+  </li>
+
+    <li class="">
+      <a href="/register.html">Register</a>
+    </li>
+
+
+
+
+     <li class="">
+       <a href="/sessions.html">Sessions</a>
+     </li>
+
+  <li class="">
+    <a href="/speakers.html">Speakers</a>
+  </li>
+
+  <li class="">
+    <a href="/wishes.html">
+      Wish List
+
+    </a>
+  </li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      More <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li class=""><a href="/about.html">About</a></li>
+
+        <li class=""><a href="/info.html">Info</a></li>
+
+      <!--
+      <li class="{{activeClass 'community'}}"><a href="{{pathFor 'community'}}">Community</a></li>
+      -->
+      <li class=""><a href="/sponsors.html">Sponsors</a></li>
+      <li class=""><a href="/coc.html">Code of Conduct</a></li>
+      <li class=""><a href="/s2013.html">Summit 2013</a></li>
+      <li class=""><a href="/s2014.html">Summit 2014</a></li>
+    </ul>
+  </li>
+
+
+
+
+				<li id="login-dropdown-list" class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown">Sign in / up <b class="caret"></b></a>
+		<div class="dropdown-menu">
+
+
+
+
+
+
+			<div class="navbar-form">
+
+			<button class="login-button btn btn-block btn-Facebook">Sign in with Facebook</button>
+
+	</div>
+
+
+
+
+
+
+
+			<div class="navbar-form">
+
+			<button class="login-button btn btn-block btn-Google">Sign in with Google</button>
+
+	</div>
+
+
+		</div>
+	</li>
+
+
+
+
+
+</ul></div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12">
+
+  <a class="share-twitter no-underline pull-right share-large" href="https://twitter.com/share?url=http%3A%2F%2Fsummit2015.reversim.com%2Fproposal%2FGN2Sq8fPHKMDFZEkR&amp;text=Vote%20for%3A%20%22Building%20A%20kafka%20cluster%20in%20AWS%20that%20will%20survive%20AZ%20crash%22&amp;via=reversim" target="_blank">
+    <i class="fa fa-twitter-square fa-2x"></i>
+  </a>
+  <a class="share-facebook no-underline pull-right share-large" href="https://www.facebook.com/dialog/share?app_id=163492177191737&amp;display=popup&amp;href=http%3A%2F%2Fsummit2015.reversim.com%2Fproposal%2FGN2Sq8fPHKMDFZEkR&amp;redirect_uri=http%3A%2F%2Fsummit2015.reversim.com%2F" target="_blank">
+    <i class="fa fa-facebook-square fa-2x"></i>
+  </a>
+<h2>
+  <span class="pre-header">Title:</span>
+
+    Building A kafka cluster in AWS that will survive AZ crash
+
+</h2>
+
+
+  <h2><span class="pre-header">Type:</span> 40min talk</h2>
+
+<h2><span class="pre-header">Tags:</span>
+
+    <span class="label label-success label-tag">programming-framework</span>
+
+    <span class="label label-success label-tag">scalability</span>
+
+</h2>
+
+<h2><span class="pre-header">Abstract:</span></h2>
+
+  <div class="pull-right"><span class="label label-primary">Status: maybe next time</span></div>
+  <p class="lead"><p>Creating a Kafka cluster in AWS that withhold billions of messages per day and survive multi node / AZ crash </p>
+<ul>
+<li>Selecting the right instance type</li>
+<li>How Many brokers?</li>
+<li>Setting the reasonable defaults</li>
+<li>Deciding on replication factor, Number of partitions and retention for each topic</li>
+<li>Configuring disks at 0.8.1</li>
+<li>Automate brokers split-up between AZ for best fault tolerance </li>
+<li>Reassign partitions on the fly and still keep fault tolerance</li>
+<li>Adding metrics</li>
+<li>Testing the cluster survivability</li>
+</ul>
+</p>
+
+
+
+  <a href="/speaker/EBmbqCpLb83ar9tpC/Ariel%20M.%20Moskovich.html">
+    <img src="https://dpk7qq034rxx8.cloudfront.net/api/file/7vJPZ1PQS3SsCHZh09r0/convert?w=40&amp;h=40&amp;fit=crop&amp;align=faces" class="img-thumbnail img-thumbnail-40" data-toggle="tooltip" title="" data-original-title="Ariel M. Moskovich">
+  </a>
+
+
+<hr>
+<div class="actions-single">
+
+</div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="http://reversim.com">© reversim 2015</a>
+        <a class="no-underline" href="https://twitter.com/reversim">
+          <i class="fa fa-twitter fa-1x"></i>
+        </a>
+        <a class="no-underline" href="https://groups.google.com/forum/#!forum/reversim-summit">
+          <i class="fa fa-group fa-1x"></i>
+        </a>
+        <!--
+        <div class='pull-right built-with'>
+          <small>
+            Built with <a href='http://devdev.io/tool/JDYjKfzX2c4czMuRA/MeteorJS'>MeteorJS</a>, <a href='http://devdev.io/tool/LZvDtsq3bXySNWEuZ/TwitterBootstrap'>Bootstrap</a>, <a href='http://devdev.io/tool/LN4h97hJ8n6udBRq7/FontAwesome'>FontAwesome</a>, <a href='http://devdev.io/tool/kXx7bYJQaoXTDJ2T3/Alertify'>Alertify</a>, <a href='http://devdev.io/tool/cj5cRr5DcEBKmAMRC/CoffeeScript'>CoffeeScript</a>
+          </small>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
