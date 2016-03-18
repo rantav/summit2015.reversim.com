@@ -1,8 +1,9 @@
 #!/bin/bash
+set -x 
 
 METEOR_APP_URL=summit2015.reversim.com
-
-DUMP_LOCATION=./db.mongodump
+COLLECTIONS="users agenda proposals sponsors wishes"
+DUMP_LOCATION=./dbbackup
 
 # 1. Ensure user has meteor & mongo installed and available in path
 if [ ! $(which meteor) ] ; then
@@ -56,6 +57,11 @@ fi
 
 rm -r $DUMP_LOCATION
 mongodump $MONGODUMP_ARGUMENTS --out $DUMP_LOCATION
+
+for c in $COLLECTIONS
+do
+    mongoexport $MONGODUMP_ARGUMENTS --out $DUMP_LOCATION/$c.json -c $c
+done
 
 if [ $? -ne 0 ] ; then
   echo "Mongodump Failed!"

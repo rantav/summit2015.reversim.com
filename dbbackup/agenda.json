@@ -1,0 +1,35 @@
+{"_id":"2CiwaNWj3ujkyCWLj","class1":"Break","createdAt":{"$date":"2015-02-16T09:03:30.038Z"},"time":{"$date":"2015-03-11T15:40:00.000Z"}}
+{"_id":"2JtBAWBMPRg7JWqcs","class1":"Coffee Break","createdAt":{"$date":"2015-02-16T09:03:30.024Z"},"icon1":"coffee","time":{"$date":"2015-03-11T12:50:00.000Z"}}
+{"_id":"5DQLmPcq6nSk7HhL8","class1":"HJKT4GYSqrkxzwpe5","createdAt":{"$date":"2015-02-16T09:03:30.052Z"},"icon1":"key","time":{"$date":"2015-03-12T08:05:00.000Z"}}
+{"_id":"5FXoQP4WFWZHpQmga","class1":"Welcome - CS Faculty Dean Prof. Irad Yavneh","class2":null,"createdAt":{"$date":"2015-02-16T09:03:29.997Z"},"icon1":"group","icon2":null,"time":{"$date":"2015-03-11T08:00:00.000Z"}}
+{"_id":"636g5SjLHDGmG3yGD","class1":"hE5xETnXoCkeSDcR8","class2":"vHwHikJGkNDG9bjmZ","createdAt":{"$date":"2015-02-16T09:03:30.005Z"},"time":{"$date":"2015-03-11T09:00:00.000Z"}}
+{"_id":"9Y82Tc2pe9oQ6iBXm","class1":"QsHFDP63oZZ7KoLLT","class2":"CxYFivAMjYfGsZ7gP","createdAt":{"$date":"2015-02-16T09:03:30.063Z"},"time":{"$date":"2015-03-12T10:00:00.000Z"}}
+{"_id":"BDEgH97eiy8Gk7cBt","class1":"AzYMQM4cKTXitHA7Y","class2":"67BiMY9jb2z4YexZP","createdAt":{"$date":"2015-02-16T09:03:30.029Z"},"time":{"$date":"2015-03-11T14:00:00.000Z"}}
+{"_id":"CaBAfAEmia29MEJ4J","class1":"Coffee Break","class2":null,"createdAt":{"$date":"2015-02-16T09:03:30.033Z"},"icon":"coffee","icon1":"coffee","icon2":null,"time":{"$date":"2015-03-11T14:40:00.000Z"}}
+{"_id":"CkrSGGdncBBekTN6d","class1":"Registration // Coffee","createdAt":{"$date":"2015-02-16T09:03:29.991Z"},"icon1":"pencil","time":{"$date":"2015-03-11T07:00:00.000Z"}}
+{"_id":"Fa8ZEjg24BnMeJbbt","class1":"Break","createdAt":{"$date":"2015-02-16T09:03:30.008Z"},"time":{"$date":"2015-03-11T09:40:00.000Z"}}
+{"_id":"HZTsmagQd5HK7NERK","class1":"Ignites,QAccw5PDNSqFXPX4M,XFjdSijm82Y4Afngm,fQ8Eg8MnimDJufg4f,AS8o7CgACMLh3qGdt,fy5n9vFiX7hjNQk63","class2":"jrueTTCGDcuk6vCtp","createdAt":{"$date":"2015-02-16T09:03:30.082Z"},"icon1":"fire","icon2":"","time":{"$date":"2015-03-12T11:40:00.000Z"}}
+{"_id":"JySYwf54n7GRY6j7w","class1":"3sGqwMciCRvoyYKTJ","class2":"sk42ziAvy47MGBrLF","createdAt":{"$date":"2015-02-16T09:03:30.084Z"},"time":{"$date":"2015-03-12T12:10:00.000Z"}}
+{"_id":"LqLS8TAzADy8KX6mW","class1":"Lunch","createdAt":{"$date":"2015-02-16T09:03:30.075Z"},"icon1":"cutlery","time":{"$date":"2015-03-12T10:40:00.000Z"}}
+{"_id":"NAPs8wotRfjCmxZa8","class1":"Beer","createdAt":{"$date":"2015-02-16T09:03:30.095Z"},"icon1":"beer","time":{"$date":"2015-03-12T14:40:00.000Z"}}
+{"_id":"Q2zEFQccyN63rPdu4","class1":"Registration // Coffee","createdAt":{"$date":"2015-02-16T09:03:30.048Z"},"icon1":"pencil","time":{"$date":"2015-03-12T07:00:00.000Z"}}
+{"_id":"RMCdvNCCQnkqP8NK5","class1":"qLezrTGCWnQ4seArA","createdAt":{"$date":"2015-02-16T09:03:30.000Z"},"icon1":"key","time":{"$date":"2015-03-11T08:10:00.000Z"}}
+{"_id":"SbcBJ4yqkK8FbfcTq","class1":"KFKKPdyRXkiAqim3b","class2":"mEeYGRseKsaEc3XfC","createdAt":{"$date":"2015-02-16T09:03:30.092Z"},"time":{"$date":"2015-03-12T14:00:00.000Z"}}
+{"_id":"WMLCZ5GE8C4YAvxc7","class1":"ZcN9QbmsfAfLknk5a","class2":"G55eQaRNcbRPvJhSu","createdAt":{"$date":"2015-02-16T09:03:30.012Z"},"time":{"$date":"2015-03-11T10:00:00.000Z"}}
+{"_id":"Ykab2mWrcosuTcJdy","class1":"Goodbye","createdAt":{"$date":"2015-02-16T09:03:30.045Z"},"icon1":"lock","time":{"$date":"2015-03-11T16:30:00.000Z"}}
+{"_id":"ZzmaoZ9N42WRe5yve","class1":"Break","createdAt":{"$date":"2015-02-16T09:03:30.060Z"},"time":{"$date":"2015-03-12T09:40:00.000Z"}}
+{"_id":"cgpyNXuyTof9ephKD","class1":"Ignites,9hftG3biQTENTeP9K,NrHZHCukNczgwpqQf,E8Mfns6GXTj6jf4J6,FB9ADuP6pDqcGf7tq,GehMDtzJSNFLna7A6,Ntkq6XYBcbiDCtfgb","class2":"GK8QNv6vhAb763iwZ","createdAt":{"$date":"2015-02-16T09:03:30.018Z"},"icon1":"fire","icon2":"","time":{"$date":"2015-03-11T11:40:00.000Z"}}
+{"_id":"ctFx4uoR6cfRAH4hH","class1":"Welcome","createdAt":{"$date":"2015-02-16T09:03:30.050Z"},"icon1":"group","time":{"$date":"2015-03-12T08:00:00.000Z"}}
+{"_id":"m2s43xLb938rthoLS","class1":"oRQqYRHnWpe5qWhoD","createdAt":{"$date":"2015-02-16T09:03:30.042Z"},"icon1":"smile-o","time":{"$date":"2015-03-11T15:50:00.000Z"}}
+{"_id":"mfNs3QG3qSbuiouLw","class1":"Break","createdAt":{"$date":"2015-02-16T09:03:30.003Z"},"time":{"$date":"2015-03-11T08:50:00.000Z"}}
+{"_id":"nNRfhfmBgTpS47Qqw","class1":"PqWBTfMKfbAGbu4Dj","class2":null,"createdAt":{"$date":"2015-02-16T09:03:30.099Z"},"icon1":"bug","icon2":null,"time":{"$date":"2015-03-12T15:00:00.000Z"}}
+{"_id":"nWNhezv4h74p76YHv","class1":"Lunch","createdAt":{"$date":"2015-02-16T09:03:30.016Z"},"icon1":"cutlery","time":{"$date":"2015-03-11T10:40:00.000Z"}}
+{"_id":"o743dc7Fv2PanxzR4","class1":"2aYp8wL6GKE6eNMTy","class2":"3Z6nqNGdR6EckhWKb","createdAt":{"$date":"2015-02-16T09:03:30.035Z"},"time":{"$date":"2015-03-11T14:50:00.000Z"}}
+{"_id":"pewhftCvos9e7QG5T","class1":"5DnTzfkYx5ZYdCoLf","class2":"2boj9jdsKveECK9GM","createdAt":{"$date":"2015-02-16T09:03:30.057Z"},"time":{"$date":"2015-03-12T09:00:00.000Z"}}
+{"_id":"rCQWBAc5cndiA23gC","class1":"nW8CJ9NkLHvhBARSB","class2":"q8BGFF8wM5DokpZMc","createdAt":{"$date":"2015-02-16T09:03:30.021Z"},"time":{"$date":"2015-03-11T12:10:00.000Z"}}
+{"_id":"rRvFLevHBFhANfKah","class1":"Open Source in Israel,4eTos8T9QfgZhrLYP,JYkKfaXGPjfSSh4Cv,N5Cx7ZT4jh8kdkjf8,H7CJj6QoCmAL42uy8,TaodH7Xv65ZGjPtWW","class2":"9PQJ5LRMtnyeSi3cc","createdAt":{"$date":"2015-02-16T09:03:30.026Z"},"icon1":"code-fork","time":{"$date":"2015-03-11T13:20:00.000Z"}}
+{"_id":"sb9k6fNnhtQ8XJiA2","class1":"Coffee Break","createdAt":{"$date":"2015-02-16T09:03:30.087Z"},"icon1":"coffee","time":{"$date":"2015-03-12T12:50:00.000Z"}}
+{"_id":"tDn2QKanssbsTJ6hM","class1":"Open Source in Israel,yFpX9vJpPxWD9EsoG,YapN2NL5xCdJoNFkq,ev4ERxP7qPc7S9ai9,Dekx6XaujGpHCFmWu","class2":"qbT7S6CaDdKADJgLL","createdAt":{"$date":"2015-02-16T09:03:30.089Z"},"icon1":"code-fork","time":{"$date":"2015-03-12T13:20:00.000Z"}}
+{"_id":"uoszpLJ5oWAujCrm6","class1":"Goodbye","createdAt":{"$date":"2015-02-16T09:03:30.104Z"},"icon1":"lock","time":{"$date":"2015-03-12T16:10:00.000Z"}}
+{"_id":"wTLuuuqjS5C28HnTD","class1":"Closing notes - feedback and thank you","createdAt":{"$date":"2015-02-16T09:03:30.102Z"},"icon1":"comment-o","time":{"$date":"2015-03-12T16:00:00.000Z"}}
+{"_id":"whKYQPzCTb8vwwF2T","class1":"Break","createdAt":{"$date":"2015-02-16T09:03:30.055Z"},"time":{"$date":"2015-03-12T08:45:00.000Z"}}
